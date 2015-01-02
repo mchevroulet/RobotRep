@@ -45,7 +45,8 @@
 #endif // end IDE
 
 // Include application, user and local libraries
-
+#include "Button.h"
+#include "Leg.h"
 
 // Define variables and constants
 //
@@ -54,41 +55,103 @@
 //
 uint8_t myLED;
 
+// pin connections
+const int buttonIndex = 2; //pin for button
+const int greenLed = 3;//pin for green Led
+const int yellowLed = 4;//pin for yellow Led
+const int redLed = 5;//pin for red Led
+const int servoPin1 = 9;//pin for servo
+const int servoPin2 = 10;//pin for servo
+const int servoPin3 = 11;//pin for servo
+//state machine counter (persistant)
+int machinestate = 0;
+const int machinestateMax = 4; //max statemachine
+const int machinestateMax1 = machinestateMax+1; //max statemachine for modulo counting
 
+
+// Setup phase
 //
-// Brief	Setup
-// Details	Define the pin the LED is connected to
+// Brief assign functions to pins and create objects
+// Details tbd
 //
-// Add setup code
-void setup() {
-    // myLED pin number
-#if defined(ENERGIA) // All LaunchPads supported by Energia
-    myLED = RED_LED;
-#elif defined(DIGISPARK) // Digispark specific
-    myLED = 1; // assuming model A
-#elif defined(MAPLE_IDE) // Maple specific
-    myLED = BOARD_LED_PIN;
-#elif defined(WIRING) // Wiring specific
-    myLED = 15;
-#elif defined(LITTLEROBOTFRIENDS) // LittleRobotFriends specific
-    myLED = 10;
-#elif defined(SPARK) // Spark specific
-    myLED = D7;
-#else // Arduino, chipKIT, Teensy specific
-    myLED = 13;
-#endif
+void setup(){
+    // declare the LED pins as outputs
+    pinMode(greenLed,OUTPUT);
+    pinMode(yellowLed,OUTPUT);
+    pinMode(redLed,OUTPUT);
     
-    pinMode(myLED, OUTPUT);
+    // declare the switch pin as an input
+    /*pinMode(buttonIndex,INPUT);*/
+    Button theButton(buttonIndex);
+    
+    // attach pin to servo object
+    /*
+    mountLeftLeg(0, servoPin1);  //knee - hip (no knee yet)
+    mountRightLeg(servoPin2, servoPin3);  //knee - hip */
+    Leg leftLeg(0, servoPin1);
+    Leg rightLeg(servoPin2, servoPin3);
 }
 
+// Loop phase
 //
-// Brief	Loop
-// Details	Blink the LED
+// Brief call functions on infinite loop
+// Details tbd
 //
-// Add loop code
-void loop() {
-    digitalWrite(myLED, HIGH);
-    delay(500);
-    digitalWrite(myLED, LOW);
-    delay(500);
+void loop(){
+    
+    //check if there is an event, if there is one increment state machine counter and mark event done
+    //statemachine counter is limited for machinestateMac (modulus)
+    if (theButton.buttonEventGet()==true) {
+        machinestate = ++machinestate % machinestateMax1;
+    }
+    
+    // set LEDs according to state
+    switch (machinestate) {
+        case 0:{
+            digitalWrite(greenLed, HIGH); // turn the green LED on pin 3 on
+            digitalWrite(yellowLed, LOW);  // turn the red LED on pin 4 off
+            digitalWrite(redLed, LOW);  // turn the red LED on pin 5 off
+            leftLeg.setLeg(0, 0); //set leg to 0°
+            rightLeg.setLeg(0, 0); //set leg to 0°
+            break;
+        }
+        case 1:{
+            digitalWrite(greenLed, HIGH);
+            digitalWrite(yellowLed, HIGH);
+            digitalWrite(redLed, LOW);
+            leftLeg.setLeg(45, 45);
+            rightLeg.setLeg(45, 45);
+            break;
+        }
+        case 2:{
+            digitalWrite(greenLed, LOW);
+            digitalWrite(yellowLed, HIGH);
+            digitalWrite(redLed, LOW);
+            leftLeg.setLeg(90, 90);
+            rightLeg.rollLeg();
+            break;
+        }
+        case 3:{
+            digitalWrite(greenLed, LOW);
+            digitalWrite(yellowLed, HIGH);
+            digitalWrite(redLed, HIGH);
+            leftLeg.setLeg(90, 90);
+            rightLeg.setLeg(90,90);
+            break;
+        }
+        case 4:{
+            digitalWrite(greenLed, LOW);
+            digitalWrite(yellowLed, LOW);
+            digitalWrite(redLed, HIGH);
+            leftLeg.setLeg(180, 180);
+            rightLeg.setLeg(180, 180);
+            break;
+        }
+        default:{ // detect if I did it wrong :-)
+            digitalWrite(greenLed, HIGH); 
+            digitalWrite(yellowLed, HIGH); 
+            digitalWrite(redLed, HIGH);  
+        }
+    }
+    delay(10);
 }
