@@ -17,9 +17,9 @@
 		D0B16A061A56C25A00771DE4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D0B16A081A56C25A00771DE4 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		D0B16A0A1A56C25A00771DE4 /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
-		D0B16A0B1A56C25A00771DE4 /* LocalLibrary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = LocalLibrary.cpp; path = Sketchbook/LocalLibrary.cpp; sourceTree = "<group>"; };
-		D0B16A0D1A56C25A00771DE4 /* LocalLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LocalLibrary.h; path = Sketchbook/LocalLibrary.h; sourceTree = "<group>"; };
-		D0B16A0F1A56C25A00771DE4 /* Sketchbook.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Sketchbook.txt; path = Sketchbook/Sketchbook.txt; sourceTree = "<group>"; };
+		D0B16A0B1A56C25A00771DE4 /* LocalLibrary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LocalLibrary.cpp; sourceTree = "<group>"; };
+		D0B16A0D1A56C25A00771DE4 /* LocalLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalLibrary.h; sourceTree = "<group>"; };
+		D0B16A0F1A56C25A00771DE4 /* Sketchbook.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Sketchbook.txt; sourceTree = "<group>"; };
 		D0B16A111A56C25A00771DE4 /* 4D Systems PICadillo 35T.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "4D Systems PICadillo 35T.xcconfig"; path = "Configurations/4D Systems PICadillo 35T.xcconfig"; sourceTree = "<group>"; };
 		D0B16A121A56C25A00771DE4 /* Adafruit Pro Trinket 3V-12MHz.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Adafruit Pro Trinket 3V-12MHz.xcconfig"; path = "Configurations/Adafruit Pro Trinket 3V-12MHz.xcconfig"; sourceTree = "<group>"; };
 		D0B16A131A56C25A00771DE4 /* Adafruit Pro Trinket 5V-16MHz.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Adafruit Pro Trinket 5V-16MHz.xcconfig"; path = "Configurations/Adafruit Pro Trinket 5V-16MHz.xcconfig"; sourceTree = "<group>"; };
@@ -106,9 +106,9 @@
 		D0B16A671A56C25B00771DE4 /* embedXcode_chrono */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = embedXcode_chrono; path = Utilities/embedXcode_chrono; sourceTree = "<group>"; };
 		D0B16A681A56C25B00771DE4 /* TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = TemplateIcon.icns; path = Utilities/TemplateIcon.icns; sourceTree = "<group>"; };
 		D0B16A691A56C25B00771DE4 /* uploader_izmir.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = uploader_izmir.sh; path = Utilities/uploader_izmir.sh; sourceTree = "<group>"; };
-		D0B16A6A1A56C25B00771DE4 /* Robot1.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; name = Robot1.ino; path = Sketchbook/Robot1.ino; sourceTree = "<group>"; };
-		D0B16A7F1A56C28600771DE4 /* leg.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = leg.ino; path = Sketchbook/leg.ino; sourceTree = "<group>"; };
-		D0B16A801A56C28600771DE4 /* SpaceShipWithServo_2.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SpaceShipWithServo_2.ino; path = Sketchbook/SpaceShipWithServo_2.ino; sourceTree = "<group>"; };
+		D0B16A6A1A56C25B00771DE4 /* Robot1.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; path = Robot1.ino; sourceTree = "<group>"; };
+		D0B16A7F1A56C28600771DE4 /* leg.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = leg.ino; sourceTree = "<group>"; };
+		D0B16A801A56C28600771DE4 /* SpaceShipWithServo_2.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = SpaceShipWithServo_2.ino; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
