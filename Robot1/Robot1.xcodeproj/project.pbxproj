@@ -107,8 +107,8 @@
 		D0B16A681A56C25B00771DE4 /* TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = TemplateIcon.icns; path = Utilities/TemplateIcon.icns; sourceTree = "<group>"; };
 		D0B16A691A56C25B00771DE4 /* uploader_izmir.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = uploader_izmir.sh; path = Utilities/uploader_izmir.sh; sourceTree = "<group>"; };
 		D0B16A6A1A56C25B00771DE4 /* Robot1.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; path = Robot1.ino; sourceTree = "<group>"; };
-		D0B16A7F1A56C28600771DE4 /* leg.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = leg.ino; path = ../../leg.ino; sourceTree = "<group>"; };
-		D0B16A801A56C28600771DE4 /* SpaceShipWithServo_2.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SpaceShipWithServo_2.ino; path = ../../SpaceShipWithServo_2.ino; sourceTree = "<group>"; };
+		D0B16A7F1A56C28600771DE4 /* leg.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = leg.ino; sourceTree = "<group>"; };
+		D0B16A801A56C28600771DE4 /* SpaceShipWithServo_2.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = SpaceShipWithServo_2.ino; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
