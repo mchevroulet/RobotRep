@@ -1,5 +1,5 @@
 //
-//  Button.h
+//  Leg.h
 //  Robot1
 //
 //  Created by michel on 02.01.15.
@@ -33,22 +33,23 @@
 #error Platform not defined
 #endif // end IDE
 
-#ifndef Robot1_Button_h
-#define Robot1_Button_h
+#ifndef Robot1_Leg_h
+#define Robot1_Leg_h
 
 
+#include <Servo.h>
+
+class MChLeg{
+    int kneeIndex, hipIndex;
+    int kneeAngle, hipAngle;
+    Servo kneeServo; 
+    Servo hipServo;
+  public:
+    MChLeg(int, int); // (knee servo index, hip servo index); use 0 if no servo
+    ~MChLeg();
+    void setLeg(int, int); // (knee angle, hip angle); in degrees, 0-180, 90 is straight
+    void rollLeg();
+};
 
 #endif
 
-class Button{
-    int buttonClick, buttonClickServed;
-    int buttonIndex;
-  public:
-    Button(int);
-    ~Button();
-    int buttonDown();
-    void buttonEventCheck();
-    int buttonEvent();
-    void buttonEventServed();
-    int buttonEventGet();
-};

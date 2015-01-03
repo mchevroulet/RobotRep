@@ -45,7 +45,7 @@
 #endif // end IDE
 
 // Include application, user and local libraries
-#include "Button.h"
+#include "MChButton.h"
 #include "Leg.h"
 
 // Define variables and constants
@@ -82,7 +82,7 @@ void setup(){
     
     // declare the switch pin as an input
     /*pinMode(buttonIndex,INPUT);*/
-    Button theButton(buttonIndex);
+    MChButton theButton(buttonIndex);
     
     // attach pin to servo object
     /*

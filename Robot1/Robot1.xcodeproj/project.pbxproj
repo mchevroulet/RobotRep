@@ -107,10 +107,10 @@
 		D0B16A681A56C25B00771DE4 /* TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = TemplateIcon.icns; path = Utilities/TemplateIcon.icns; sourceTree = "<group>"; };
 		D0B16A691A56C25B00771DE4 /* uploader_izmir.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = uploader_izmir.sh; path = Utilities/uploader_izmir.sh; sourceTree = "<group>"; };
 		D0B16A6A1A56C25B00771DE4 /* Robot1.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; path = Robot1.ino; sourceTree = "<group>"; };
-		D0CEBD7C1A57351900A8E8DE /* Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
-		D0CEBD7D1A57353B00A8E8DE /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
-		D0CEBD7E1A574CC800A8E8DE /* Leg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leg.h; sourceTree = "<group>"; };
-		D0CEBD7F1A574CD600A8E8DE /* Leg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Leg.cpp; sourceTree = "<group>"; };
+		D0CEBD7C1A57351900A8E8DE /* MChButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MChButton.h; sourceTree = "<group>"; };
+		D0CEBD7D1A57353B00A8E8DE /* MChButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MChButton.cpp; sourceTree = "<group>"; };
+		D0CEBD7E1A574CC800A8E8DE /* MChLeg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MChLeg.h; sourceTree = "<group>"; };
+		D0CEBD7F1A574CD600A8E8DE /* MChLeg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MChLeg.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -144,10 +144,10 @@
 				D0B16A0D1A56C25A00771DE4 /* LocalLibrary.h */,
 				D0B16A6A1A56C25B00771DE4 /* Robot1.ino */,
 				D0B16A0F1A56C25A00771DE4 /* Sketchbook.txt */,
-				D0CEBD7C1A57351900A8E8DE /* Button.h */,
-				D0CEBD7D1A57353B00A8E8DE /* Button.cpp */,
-				D0CEBD7E1A574CC800A8E8DE /* Leg.h */,
-				D0CEBD7F1A574CD600A8E8DE /* Leg.cpp */,
+				D0CEBD7C1A57351900A8E8DE /* MChButton.h */,
+				D0CEBD7D1A57353B00A8E8DE /* MChButton.cpp */,
+				D0CEBD7E1A574CC800A8E8DE /* MChLeg.h */,
+				D0CEBD7F1A574CD600A8E8DE /* MChLeg.cpp */,
 			);
 			name = Sketchbook;
 			sourceTree = "<group>";

@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 MCh_Home. All rights reserved.
 //
 
-#include "Leg.h"
+#include "MChLeg.h"
 
-void Leg::Leg(int x, int y): kneeServo(x), hipServo(y){
+void MChLeg::MChLeg(int, int){
     kneeIndex = x;
     hipIndex = y;
     if (kneeIndex <> 0) {
@@ -20,7 +20,7 @@ void Leg::Leg(int x, int y): kneeServo(x), hipServo(y){
     setLeg(90, 90);
 }
 
-void Leg::~Leg(){
+void MChLeg::~MChLeg(){
     if (kneeIndex <> 0) {
         kneeServo.detach();
     }
@@ -29,7 +29,7 @@ void Leg::~Leg(){
     }
 }
 
-void Leg::setLeg(int x, int y){
+void MChLeg::setLeg(int x, int y){
     kneeAngle = x;
     hipAngle = y;
     if (kneeIndex <> 0) {
@@ -40,7 +40,7 @@ void Leg::setLeg(int x, int y){
     }
 }
 
-void Leg::rollLeg(){
+void MChLeg::rollLeg(){
     //move leg to make a step
     setLeg(90, 90);
     delay(200);

@@ -32,7 +32,8 @@ else ifneq ($(MAKECMDGOALS),boards)
                         ifneq ($(MAKECMDGOALS),info)
                             ifneq ($(MAKECMDGOALS),depends)
                         	    ifeq ($(AVRDUDE_PORT),)
-                            	    $(error Serial port not available)
+# *** MCh modified to pass Build
+#                            	    $(error Serial port not available)
                                endif
                             endif
                         endif
