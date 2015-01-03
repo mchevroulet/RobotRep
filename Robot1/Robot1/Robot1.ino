@@ -67,7 +67,10 @@ const int servoPin3 = 11;//pin for servo
 int machinestate = 0;
 const int machinestateMax = 4; //max statemachine
 const int machinestateMax1 = machinestateMax+1; //max statemachine for modulo counting
-
+//define persitent objects
+MChButton theButton(buttonIndex); // declare the switch pin as an input
+MChLeg leftLeg(0, servoPin1); //left knee - hip (no knee yet)
+MChLeg rightLeg(servoPin2, servoPin3); //right knee - hip */
 
 // Setup phase
 //
@@ -79,17 +82,6 @@ void setup(){
     pinMode(greenLed,OUTPUT);
     pinMode(yellowLed,OUTPUT);
     pinMode(redLed,OUTPUT);
-    
-    // declare the switch pin as an input
-    /*pinMode(buttonIndex,INPUT);*/
-    MChButton theButton(buttonIndex);
-    
-    // attach pin to servo object
-    /*
-    mountLeftLeg(0, servoPin1);  //knee - hip (no knee yet)
-    mountRightLeg(servoPin2, servoPin3);  //knee - hip */
-    MChLeg leftLeg(0, servoPin1);
-    MChLeg rightLeg(servoPin2, servoPin3);
 }
 
 // Loop phase
