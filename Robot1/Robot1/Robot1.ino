@@ -111,8 +111,8 @@ void loop(){
             digitalWrite(greenLed, HIGH);
             digitalWrite(yellowLed, HIGH);
             digitalWrite(redLed, LOW);
-            leftLeg.setLeg(45, 45);
-            rightLeg.setLeg(45, 45);
+            //leftLeg.setLeg(45, 45);
+            //rightLeg.setLeg(45, 45);
             break;
         }
         case 2:{

@@ -8,16 +8,22 @@
 
 #include "MChLeg.h"
 
+// Servo objects are created by MChLeg class when an object of the class is created
+// Servo objects are assigned a pin by MChLeg::MChLeg constructor
+// Servo pin is detached by MChLeg::~MChLeg destructor
+// Servo objects are set to a 90 initial position (mid-range)
+
 MChLeg::MChLeg(int x, int y){
     kneeIndex = x;
     hipIndex = y;
     if (kneeIndex != 0) {
         kneeServo.attach(kneeIndex);
+        kneeServo.write(90);
     }
     if (hipIndex != 0) {
         hipServo.attach(hipIndex);
+        hipServo.write(90);
     }
-    setLeg(90, 90);
 }
 
 MChLeg::~MChLeg(){
