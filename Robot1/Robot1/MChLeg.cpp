@@ -8,23 +8,23 @@
 
 #include "MChLeg.h"
 
-void MChLeg::MChLeg(int, int){
+MChLeg::MChLeg(int x, int y){
     kneeIndex = x;
     hipIndex = y;
-    if (kneeIndex <> 0) {
+    if (kneeIndex != 0) {
         kneeServo.attach(kneeIndex);
     }
-    if (hipIndex <> 0) {
+    if (hipIndex != 0) {
         hipServo.attach(hipIndex);
     }
     setLeg(90, 90);
 }
 
-void MChLeg::~MChLeg(){
-    if (kneeIndex <> 0) {
+MChLeg::~MChLeg(){
+    if (kneeIndex != 0) {
         kneeServo.detach();
     }
-    if (hipIndex <> 0) {
+    if (hipIndex != 0) {
         hipServo.detach();
     }
 }
@@ -32,10 +32,10 @@ void MChLeg::~MChLeg(){
 void MChLeg::setLeg(int x, int y){
     kneeAngle = x;
     hipAngle = y;
-    if (kneeIndex <> 0) {
+    if (kneeIndex != 0) {
         kneeServo.write(kneeAngle);
     }
-    if (hipIndex <> 0) {
+    if (hipIndex != 0) {
         hipServo.write(hipAngle);
     }
 }

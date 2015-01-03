@@ -13,6 +13,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D01041201A58498600604CE5 /* Servo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Servo.cpp; sourceTree = "<group>"; };
+		D01041211A58498600604CE5 /* Servo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Servo.h; sourceTree = "<group>"; };
 		D04EFBBA1A57199F00221769 /* Index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Index; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B16A061A56C25A00771DE4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D0B16A081A56C25A00771DE4 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -140,6 +142,8 @@
 		D0B16A0E1A56C25A00771DE4 /* Sketchbook */ = {
 			isa = PBXGroup;
 			children = (
+				D01041201A58498600604CE5 /* Servo.cpp */,
+				D01041211A58498600604CE5 /* Servo.h */,
 				D0B16A0B1A56C25A00771DE4 /* LocalLibrary.cpp */,
 				D0B16A0D1A56C25A00771DE4 /* LocalLibrary.h */,
 				D0B16A6A1A56C25B00771DE4 /* Robot1.ino */,

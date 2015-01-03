@@ -1,5 +1,5 @@
 //
-//  Leg.h
+//  MChLeg.h
 //  Robot1
 //
 //  Created by michel on 02.01.15.
@@ -36,8 +36,8 @@
 #ifndef Robot1_Leg_h
 #define Robot1_Leg_h
 
+#include "Servo.h"
 
-#include <Servo.h>
 
 class MChLeg{
     int kneeIndex, hipIndex;
@@ -51,5 +51,5 @@ class MChLeg{
     void rollLeg();
 };
 
-#endif
+#endif // end #ifndef Robot1_Leg_h
 

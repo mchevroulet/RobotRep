@@ -46,7 +46,7 @@
 
 // Include application, user and local libraries
 #include "MChButton.h"
-#include "Leg.h"
+#include "MChLeg.h"
 
 // Define variables and constants
 //
@@ -88,8 +88,8 @@ void setup(){
     /*
     mountLeftLeg(0, servoPin1);  //knee - hip (no knee yet)
     mountRightLeg(servoPin2, servoPin3);  //knee - hip */
-    Leg leftLeg(0, servoPin1);
-    Leg rightLeg(servoPin2, servoPin3);
+    MChLeg leftLeg(0, servoPin1);
+    MChLeg rightLeg(servoPin2, servoPin3);
 }
 
 // Loop phase
