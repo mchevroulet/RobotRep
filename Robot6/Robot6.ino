@@ -83,7 +83,7 @@ void loop(){
             digitalWrite(greenLed, HIGH); // turn the green LED on pin 3 on
             digitalWrite(yellowLed, LOW);  // turn the red LED on pin 4 off
             digitalWrite(redLed, LOW);  // turn the red LED on pin 5 off
-            leftLeg.setLeg(30, 30); // set leg to 0°
+            leftLeg.setLeg(70, 70); // set leg to 0°
             rightLeg.setLeg(70, 70); //set leg to 0°
             break;
         }
@@ -92,6 +92,7 @@ void loop(){
             digitalWrite(yellowLed, HIGH);
             digitalWrite(redLed, LOW);
             leftLeg.setLeg(30, 30);
+            delay(200);
             rightLeg.setLeg(80, 80);
             break;
         }
@@ -115,8 +116,9 @@ void loop(){
             digitalWrite(greenLed, LOW);
             digitalWrite(yellowLed, LOW);
             digitalWrite(redLed, HIGH);
-            leftLeg.setLeg(90, 90);
             rightLeg.setLeg(110, 110);
+            delay(200);
+            leftLeg.setLeg(70, 70);
             break;
         }
         default:{ // detect if I did it wrong :-)
