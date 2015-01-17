@@ -83,40 +83,40 @@ void loop(){
             digitalWrite(greenLed, HIGH); // turn the green LED on pin 3 on
             digitalWrite(yellowLed, LOW);  // turn the red LED on pin 4 off
             digitalWrite(redLed, LOW);  // turn the red LED on pin 5 off
-            leftLeg.setLeg(10, 10); // set leg to 0°
-            rightLeg.setLeg(10, 10); //set leg to 0°
+            leftLeg.setLeg(30, 30); // set leg to 0°
+            rightLeg.setLeg(70, 70); //set leg to 0°
             break;
         }
         case 1:{
             digitalWrite(greenLed, HIGH);
             digitalWrite(yellowLed, HIGH);
             digitalWrite(redLed, LOW);
-            leftLeg.setLeg(45, 45);
-            rightLeg.setLeg(45, 45);
+            leftLeg.setLeg(30, 30);
+            rightLeg.setLeg(80, 80);
             break;
         }
         case 2:{
             digitalWrite(greenLed, LOW);
             digitalWrite(yellowLed, HIGH);
             digitalWrite(redLed, LOW);
-            leftLeg.setLeg(90, 90);
-            rightLeg.rollLeg(); //long roll of leg
+            leftLeg.setLeg(30, 30);
+            rightLeg.setLeg(90, 90);
             break;
         }
         case 3:{
             digitalWrite(greenLed, LOW);
             digitalWrite(yellowLed, HIGH);
             digitalWrite(redLed, HIGH);
-            leftLeg.setLeg(90, 90);
-            rightLeg.setLeg(90,90);
+            leftLeg.setLeg(30, 30);
+            rightLeg.setLeg(100,100);
             break;
         }
         case 4:{
             digitalWrite(greenLed, LOW);
             digitalWrite(yellowLed, LOW);
             digitalWrite(redLed, HIGH);
-            leftLeg.setLeg(170, 170);
-            rightLeg.setLeg(170, 170);
+            leftLeg.setLeg(90, 90);
+            rightLeg.setLeg(110, 110);
             break;
         }
         default:{ // detect if I did it wrong :-)
