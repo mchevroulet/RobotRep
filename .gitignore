@@ -1,0 +1,5 @@
+#Git ignore files
+
+#Mac crap
+.DS_Store
+UserInterfaceState.xcuserstate
