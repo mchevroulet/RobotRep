@@ -48,10 +48,10 @@ MChLeg leftLeg;  // declare left leg
 MChStateMachine myStateMachine;
 
 //list states
-#define END_MIN 20
-#define END_MAX 120
-#define MID_MIN 70
-#define MID_MAX 120
+#define END_MIN 0
+#define END_MAX 180
+#define MID_MIN 00
+#define MID_MAX 90
 #define M180(a) (180 - a)
 
 void State0(){
@@ -106,7 +106,7 @@ void setup(){
     pinMode(yellowLed,OUTPUT);
     pinMode(redLed,OUTPUT);
     
-    leftLeg.assignLeg(servoPin1, servoPin2); //right end-center
+    leftLeg.assignLeg(servoPin2, servoPin1); //right end-center
     rightLeg.assignLeg(servoPin3, servoPin4); //left end-center 
     
     MChSMState myState;
