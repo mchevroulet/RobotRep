@@ -52,41 +52,42 @@ MChStateMachine myStateMachine;
 #define END_MAX 120
 #define MID_MIN 70
 #define MID_MAX 120
+#define M180(a) (180 - a)
 
 void State0(){
     digitalWrite(greenLed, HIGH); // turn the green LED on pin 3 on
     digitalWrite(yellowLed, LOW);  // turn the red LED on pin 4 off
     digitalWrite(redLed, LOW);  // turn the red LED on pin 5 off
     leftLeg.setLeg(END_MIN, MID_MIN); // set leg to 0°
-    rightLeg.setLeg(END_MAX, MID_MAX); //set leg to 0°
+    rightLeg.setLeg(M180(END_MAX), M180(MID_MAX)); //set leg to 0°
 }
 void State1(){
     digitalWrite(greenLed, HIGH);
     digitalWrite(yellowLed, HIGH);
     digitalWrite(redLed, LOW);
     leftLeg.setLeg(END_MAX, MID_MIN);
-    rightLeg.setLeg(END_MIN, MID_MAX);
+    rightLeg.setLeg(M180(END_MIN), M180(MID_MAX));
 }
 void State2(){
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, HIGH);
     digitalWrite(redLed, LOW);
     leftLeg.setLeg(END_MAX, MID_MAX);
-    rightLeg.setLeg(END_MIN, MID_MIN);
+    rightLeg.setLeg(M180(END_MIN), M180(MID_MIN));
 }
 void State3(){
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, HIGH);
     digitalWrite(redLed, HIGH);
     leftLeg.setLeg(END_MIN, MID_MAX);
-    rightLeg.setLeg(END_MAX, MID_MIN);
+    rightLeg.setLeg(M180(END_MAX), M180(MID_MIN));
 }
 void State4(){
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, LOW);
     digitalWrite(redLed, HIGH);
     rightLeg.setLeg(END_MIN, MID_MIN);
-    leftLeg.setLeg(END_MAX, MID_MIN);
+    leftLeg.setLeg(M180(END_MAX), M180(MID_MIN));
 }
 
 
