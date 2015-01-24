@@ -31,6 +31,7 @@ const int redLed = 5;//pin for red Led
 const int servoPin1 = 9;//pin for servo
 const int servoPin2 = 10;//pin for servo
 const int servoPin3 = 11;//pin for servo
+const int servoPin4 = 6;//pin for servo
 
 //Input stuff
 String inputString = "";         // a string to hold incoming data
@@ -47,42 +48,45 @@ MChLeg leftLeg;  // declare left leg
 MChStateMachine myStateMachine;
 
 //list states
+#define END_MIN 20
+#define END_MAX 120
+#define MID_MIN 70
+#define MID_MAX 120
+
 void State0(){
     digitalWrite(greenLed, HIGH); // turn the green LED on pin 3 on
     digitalWrite(yellowLed, LOW);  // turn the red LED on pin 4 off
     digitalWrite(redLed, LOW);  // turn the red LED on pin 5 off
-    leftLeg.setLeg(70, 70); // set leg to 0°
-    rightLeg.setLeg(70, 70); //set leg to 0°
+    leftLeg.setLeg(END_MIN, MID_MIN); // set leg to 0°
+    rightLeg.setLeg(END_MAX, MID_MAX); //set leg to 0°
 }
 void State1(){
     digitalWrite(greenLed, HIGH);
     digitalWrite(yellowLed, HIGH);
     digitalWrite(redLed, LOW);
-    leftLeg.setLeg(30, 30);
-    delay(200);
-    rightLeg.setLeg(80, 80);
+    leftLeg.setLeg(END_MAX, MID_MIN);
+    rightLeg.setLeg(END_MIN, MID_MAX);
 }
 void State2(){
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, HIGH);
     digitalWrite(redLed, LOW);
-    leftLeg.setLeg(30, 30);
-    rightLeg.setLeg(90, 90);
+    leftLeg.setLeg(END_MAX, MID_MAX);
+    rightLeg.setLeg(END_MIN, MID_MIN);
 }
 void State3(){
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, HIGH);
     digitalWrite(redLed, HIGH);
-    leftLeg.setLeg(30, 30);
-    rightLeg.setLeg(100,100);
+    leftLeg.setLeg(END_MIN, MID_MAX);
+    rightLeg.setLeg(END_MAX, MID_MIN);
 }
 void State4(){
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, LOW);
     digitalWrite(redLed, HIGH);
-    rightLeg.setLeg(110, 110);
-    delay(200);
-    leftLeg.setLeg(70, 70);
+    rightLeg.setLeg(END_MIN, MID_MIN);
+    leftLeg.setLeg(END_MAX, MID_MIN);
 }
 
 
@@ -101,8 +105,8 @@ void setup(){
     pinMode(yellowLed,OUTPUT);
     pinMode(redLed,OUTPUT);
     
-    leftLeg.assignLeg(0, servoPin1); //right knee - hip
-    rightLeg.assignLeg(servoPin2, servoPin3); //right knee - hip 
+    leftLeg.assignLeg(servoPin1, servoPin2); //right end-center
+    rightLeg.assignLeg(servoPin3, servoPin4); //left end-center 
     
     MChSMState myState;
     myState.stateId = 0;
@@ -136,8 +140,6 @@ void loop(){
         myStateMachine.incrementState();
     }
     
-    // set LEDs according to state
-
     delay(10);
     if (stringComplete) {
         if (inputString == "next\n"){
