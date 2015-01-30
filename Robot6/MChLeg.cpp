@@ -13,8 +13,9 @@
 // Servo pin is detached by MChLeg::~MChLeg destructor
 // Servo objects position is 0 - 180 degrees on regular servos
 
-const int cMChLegServoMin = 600; //default is 544
-const int cMChLegServoMax = 2400; //default is 2400
+#define dMChLegServoMin 600 //default is 544
+#define dMChLegServoMax 2400 //default is 2400
+#define dMChLegAttachDelay 500 //delay to avoid overcurrent
 
 MChLeg::MChLeg(){
     this->kneeIndex = 0;
@@ -40,19 +41,23 @@ void MChLeg::assignLeg(int x, int y){
     this->kneeIndex = x;
     this->hipIndex = y;
     if (this->kneeIndex != 0) {
-        this->kneeServo.attach(this->kneeIndex, cMChLegServoMin, cMChLegServoMax);
+        delay(dMChLegAttachDelay);
+        this->kneeServo.attach(this->kneeIndex, dMChLegServoMin, dMChLegServoMax);
     }
     if (this->hipIndex != 0) {
-        this->hipServo.attach(this->hipIndex, cMChLegServoMin, cMChLegServoMax);
+        delay(dMChLegAttachDelay);
+        this->hipServo.attach(this->hipIndex, dMChLegServoMin, dMChLegServoMax);
     }
 }
 void MChLeg::setLeg(int x, int y){
     this->kneeAngle = x;
     this->hipAngle = y;
     if (this->kneeIndex != 0) {
+        delay(dMChLegAttachDelay);
         this->kneeServo.write(this->kneeAngle);
     }
     if (this->hipIndex != 0) {
+        delay(dMChLegAttachDelay);
         this->hipServo.write(this->hipAngle);
     }
 }

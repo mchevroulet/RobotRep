@@ -48,46 +48,50 @@ MChLeg leftLeg;  // declare left leg
 MChStateMachine myStateMachine;
 
 //list states
-#define END_MIN 0
-#define END_MAX 180
-#define MID_MIN 00
-#define MID_MAX 90
+#define END_MIN 10
+#define END_MID 90
+#define END_MAX 170
+#define MID_MIN 10
+#define MID_MAX 80
 #define M180(a) (180 - a)
+
+#define MODE_ON 1
+#define MODE_STEP 2
+int modeSm = MODE_STEP;
+
 
 void State0(){
     digitalWrite(greenLed, HIGH); // turn the green LED on pin 3 on
     digitalWrite(yellowLed, LOW);  // turn the red LED on pin 4 off
     digitalWrite(redLed, LOW);  // turn the red LED on pin 5 off
-    leftLeg.setLeg(END_MIN, MID_MIN); // set leg to 0°
-    rightLeg.setLeg(M180(END_MAX), M180(MID_MAX)); //set leg to 0°
+    leftLeg.setLeg(END_MID, MID_MIN); // set leg to 0°
+    rightLeg.setLeg(M180(END_MID), M180(MID_MIN)); //set leg to 0°
 }
 void State1(){
     digitalWrite(greenLed, HIGH);
     digitalWrite(yellowLed, HIGH);
     digitalWrite(redLed, LOW);
     leftLeg.setLeg(END_MAX, MID_MIN);
-    rightLeg.setLeg(M180(END_MIN), M180(MID_MAX));
+    rightLeg.setLeg(M180(END_MAX), M180(MID_MIN));
 }
 void State2(){
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, HIGH);
     digitalWrite(redLed, LOW);
     leftLeg.setLeg(END_MAX, MID_MAX);
-    rightLeg.setLeg(M180(END_MIN), M180(MID_MIN));
+    leftLeg.setLeg(END_MIN, MID_MIN);
 }
 void State3(){
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, HIGH);
     digitalWrite(redLed, HIGH);
-    leftLeg.setLeg(END_MIN, MID_MAX);
-    rightLeg.setLeg(M180(END_MAX), M180(MID_MIN));
+    rightLeg.setLeg(M180(END_MAX), M180(MID_MAX));
+    rightLeg.setLeg(M180(END_MIN), M180(MID_MIN));
 }
 void State4(){
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, LOW);
     digitalWrite(redLed, HIGH);
-    rightLeg.setLeg(END_MIN, MID_MIN);
-    leftLeg.setLeg(M180(END_MAX), M180(MID_MIN));
 }
 
 
@@ -146,10 +150,20 @@ void loop(){
         if (inputString == "next\n"){
           myStateMachine.incrementState();
         }
+        else if (inputString == "go\n"){
+          modeSm = MODE_ON;
+        }
+        else if (inputString == "stop\n"){
+          modeSm = MODE_STEP;
+        }
         Serial.println(inputString); 
         // clear the string:
         inputString = "";
         stringComplete = false;
+    }
+    
+    if (modeSm == MODE_ON){
+      myStateMachine.incrementState();
     }
 
 }
